@@ -1,48 +1,75 @@
-# Year With You
+Year With You
+Overview
 
-Cinematic, scroll-driven digital love letter built with Next.js App Router, Tailwind CSS, Framer Motion, and local media files from `/public`.
+Year With You is a cinematic, scroll-driven digital storytelling experience designed as an interactive love letter. It presents memories and emotions through smooth transitions, synchronized audio, images, and video that unfold progressively as users scroll.
 
-## Stack
+Built using modern frontend technologies, the project focuses on immersive storytelling, fluid motion design, and structured pacing. The application runs entirely on the client side with locally stored media assets and requires no backend services, database, or authentication.
 
-- Next.js App Router
-- Tailwind CSS
-- Framer Motion
-- Local audio (.mp3)
-- No backend / no DB / no login
+Tech Stack
 
-## Run
+Next.js (App Router) – Routing and application structure
 
-```bash
+Tailwind CSS – Styling and responsive layout
+
+Framer Motion – Animations and motion effects
+
+Local Media Assets – Audio, images, and videos stored in /public
+
+Features
+
+Scroll-driven cinematic storytelling
+
+Smooth animated transitions between chapters
+
+Audio playback with seamless crossfading
+
+Memory sections with images and videos
+
+IntersectionObserver-based active section detection
+
+Long-press interaction to reveal a hidden message
+
+Fully client-side implementation
+
+Getting Started
+Installation
 npm install
 npm run dev
-```
 
-Open `http://localhost:3000`.
+Open your browser and visit:
 
-## Asset paths
+http://localhost:3000
+Media Assets
 
-Place your real media files in these locations:
+Place your media files inside the /public directory using the following structure:
 
-- Intro heartbeat: `/public/audio/heartbeat.mp3`
-- Memory songs: `/public/audio/*.mp3`
-- Photos: `/public/images/*.jpg` or `.png`
-- Videos: `/public/video/*.mp4`
-- Song icons: `/public/images/song-*.jpg`
+/public/audio/heartbeat.mp3
+/public/audio/*.mp3
+/public/images/*.jpg
+/public/images/*.png
+/public/video/*.mp4
+/public/images/song-*.jpg
 
-Current story references are defined in `data/story.ts`.
+Story content and asset references are defined in:
 
-## Structure
+data/story.ts
+Project Structure
+app/page.tsx
+components/year-with-you-experience.tsx
+hooks/use-dual-audio.ts
+hooks/use-intersection-active.ts
+data/story.ts
+app/globals.css
+Interaction Notes
 
-- `app/page.tsx`: complete experience entry page.
-- `components/year-with-you-experience.tsx`: full cinematic flow + pacing.
-- `hooks/use-dual-audio.ts`: dual-element audio crossfade engine.
-- `hooks/use-intersection-active.ts`: IntersectionObserver active section hook.
-- `data/story.ts`: all chapters, memory content, themes, and local asset links.
-- `app/globals.css`: grain overlay, scroll snap, global cinematic styles.
+Audio begins only after the user clicks Start Our Story due to browser autoplay policies.
 
-## Notes
+Music transitions between memory sections crossfade over approximately 3.5 seconds.
 
-- Audio starts only after first user interaction (`Start Our Story`).
-- Memory-to-memory songs crossfade over ~3.5s.
-- Final scene fades music over 8s.
-- Long-press (3s) reveals secret message.
+The final scene fades music out gradually over 8 seconds.
+
+A 3-second long press interaction reveals a hidden message.
+
+Purpose
+
+This project demonstrates how modern frontend tools can be used to create immersive narrative-driven web experiences. It highlights animation workflows, media synchronization, and interactive storytelling within a purely client-side environment.
